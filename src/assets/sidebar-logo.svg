@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <defs>
+    <linearGradient id="sidebarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4e67ff" />
+      <stop offset="100%" stop-color="#c64ce6" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4" />
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0b0a13" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  <rect width="160" height="160" rx="34" fill="#0f0d1d" />
+  <g filter="url(#softShadow)">
+    <rect x="14" y="14" width="132" height="132" rx="30" fill="url(#sidebarGrad)" />
+  </g>
+  <path d="M36 54h48" stroke="url(#accentGrad)" stroke-width="12" stroke-linecap="round" />
+  <path d="M36 74h38" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity="0.88" />
+  <path d="M36 92h26" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity="0.65" />
+  <circle cx="118" cy="56" r="18" fill="#ffffff" />
+  <circle cx="118" cy="56" r="12" fill="#4e67ff" />
+  <path d="M112 56l4 6 10-12" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" />
+  <circle cx="44" cy="44" r="8" fill="#ffffff" opacity="0.9" />
+  <circle cx="56" cy="40" r="4" fill="#ffffff" opacity="0.75" />
+  <text x="80" y="118" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="18" font-weight="800">
+    Task
+  </text>
+  <text x="80" y="138" text-anchor="middle" fill="#dcd9ff" font-family="Inter, sans-serif" font-size="13" font-weight="500">
+    Management
+  </text>
+</svg>
