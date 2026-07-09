@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="flex gap-5 items-center">
         <p>Kaushal</p>
         <Avatar
-          src={taskLogo}
+          src="/static/images/avatar/1.jpg"
           alt="Task Management Logo"
           sx={{ width: 40, height: 40 }}
         />
