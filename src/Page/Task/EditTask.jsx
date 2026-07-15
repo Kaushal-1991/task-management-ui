@@ -28,7 +28,7 @@ const style = {
   p: 4,
 };
 
-const CreateNewTask = ({ open, handleClose }) => {
+const EditTask = ({ open, handleClose }) => {
   const [formData, setFormData] = useState({
     title: "",
     image: "",
@@ -150,7 +150,7 @@ const CreateNewTask = ({ open, handleClose }) => {
               variant="contained"
               onClick={handleSubmit}
             >
-              Create Task
+              Update Task
             </Button>
           </Grid>
         </Grid>
@@ -159,4 +159,4 @@ const CreateNewTask = ({ open, handleClose }) => {
   );
 };
 
-export default CreateNewTask;
+export default EditTask;

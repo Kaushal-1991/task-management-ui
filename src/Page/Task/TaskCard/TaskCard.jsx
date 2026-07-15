@@ -5,6 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import UserList from "../UserList";
 import SubmissionList from "./SubmissionList";
+import EditTask from "../EditTask";
 
 const role = "ROLE_ADMIN";
 const TaskCard = () => {
@@ -35,7 +36,17 @@ const TaskCard = () => {
   const handleCloseSubmissions = () => {
     setOpenSubmissionList(false);
   };
-  const handleEdit = () => {};
+
+  const [openEditTask, setOpenEditTask] = useState(false);
+  const handleOpenEdit = () => {
+    setOpenEditTask(true);
+    handleMenuClose();
+  };
+
+  const handleCloseEdit = () => {
+    setOpenEditTask(false);
+  };
+
   const handleDelete = () => {};
   return (
     <div className="card lg:flex justify-between">
@@ -89,7 +100,7 @@ const TaskCard = () => {
               <MenuItem onClick={handleOpenSubmissions}>
                 See Submissions
               </MenuItem>
-              <MenuItem onClick={handleEdit}>Edit</MenuItem>
+              <MenuItem onClick={handleOpenEdit}>Edit</MenuItem>
               <MenuItem onClick={handleDelete}>Delete</MenuItem>
             </>
           ) : (
@@ -102,6 +113,7 @@ const TaskCard = () => {
         open={openSubmissionList}
         handleClose={handleCloseSubmissions}
       />
+      <EditTask open={openEditTask} handleClose={handleCloseEdit} />
     </div>
   );
 };
