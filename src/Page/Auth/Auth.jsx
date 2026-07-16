@@ -3,7 +3,7 @@ import "./Auth.css";
 import Signin from "./Signin";
 import Signup from "./Signup";
 const Auth = () => {
-  const [isRegister, setIsRegister] = useState(true);
+  const [isRegister, setIsRegister] = useState(false);
   const togglePannel = () => {
     setIsRegister(!isRegister);
   };

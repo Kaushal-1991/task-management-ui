@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import sidebarLogo from "../../assets/sidebar-logo.svg";
 import "./Sidebar.css";
 import CreateNewTask from "../Task/CreateNewTask";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const menu = [
   { name: "Home", value: "Home", role: ["ROLE_ADMIN", "ROLE_CUSTOMER"] },
@@ -16,6 +17,8 @@ const menu = [
 const role = "ROLE_ADMIN";
 
 const Sidebar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [activeMenu, setActiveMenu] = useState("Home");
   const [createNewTask, setCreateNewTask] = useState(false);
   const handleCreateNewTask = () => {
@@ -24,17 +27,25 @@ const Sidebar = () => {
   const handleCloseNewTask = () => {
     setCreateNewTask(false);
   };
-  const handleMenuChange = (itemName) => {
-    if (itemName === "Create New Task") {
+  const handleMenuChange = (item) => {
+    setActiveMenu(item);
+    const updateParams = new URLSearchParams(location.search);
+    if (item === "Create New Task") {
       handleCreateNewTask();
+    } else if (item == "Home") {
+      updateParams.delete("filter");
+      const queryString = updateParams.toString();
+      const updatedPath = queryString
+        ? `${location.pathname} ? ${queryString}`
+        : location.pathname;
+      navigate(updatedPath);
     }
-    setActiveMenu(itemName);
   };
 
   return (
     <>
-      <div className="card min-h-[85vh] flex flex-col justify-center fixed w-[20vw]">
-        <div className="space-y-5 h-full">
+      <div className="card min-h-[85vh] flex flex-col justify-between lg:sticky lg:top-4">
+        <div className="space-y-4 h-full">
           <div className="flex justify-center">
             <Avatar
               variant="square"
