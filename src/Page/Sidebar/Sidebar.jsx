@@ -39,6 +39,9 @@ const Sidebar = () => {
         ? `${location.pathname} ? ${queryString}`
         : location.pathname;
       navigate(updatedPath);
+    } else {
+      updateParams.set("filter", item);
+      navigate(`${location.pathname}?${updateParams.toString()}`);
     }
   };
 
